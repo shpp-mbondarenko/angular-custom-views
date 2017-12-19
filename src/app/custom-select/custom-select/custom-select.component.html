@@ -1,0 +1,18 @@
+<p>
+  custom-select works!--- input array = {{selectItemsFromParent}} ---
+</p>
+<button (click)="sendSelectedOption()">Click me!</button>
+
+<div class="selectContainer">
+  <div class="selectHead" (click)="showItemsOfCustomSelect()">
+    <p> {{selectedOption}}</p>
+    <p> &#9660;</p>
+  </div>
+  <div *ngIf="isVisibleItems" class="selectItemsContainer">
+    <div (click)="selectCurrentOption(i)" class="selectItem" *ngFor="let option of selectItemsFromParent; let i = index;">
+      <p>{{option}}</p>
+      <!-- <p>{{i}}</p> -->
+    </div>
+
+  </div>
+</div>

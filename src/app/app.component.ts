@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  selectArrayData = ['Vasya', 'Dima', 'Alkogolik'];
+
+  selectedItemFromChild = 'test';
+
+  receiveDataFromChild(str): void {
+    this.selectedItemFromChild = str;
+    console.log('in app module ' + str);
+  }
+
 }
